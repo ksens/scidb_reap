@@ -8,7 +8,7 @@ This is a script to delete the arrays left over by a badly terminated SciDB-py s
 {15} 'py1100963282158_00013',32134,32134,'py1100963282158_00013<No:int64,name:string,uaid:int64,aid:int64,schema:string,availability:bool,temporary:bool> [idx=0:*,1000000,0]',true,false
 ```
 
-# use with caution
+## Use with caution
 
 - array names matching `'py*_*'` will be deleted 
 - target is to delete arrays like `'py1100961778328_00046'`
