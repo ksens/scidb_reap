@@ -19,7 +19,7 @@ for name in $(iqlist_names | grep -e "py.*_.*" | awk '{print $2}' | cut -d "'" -
 done
 ```
 
-# Python script
+## Python script
 This is a script to delete the arrays left over by a badly terminated SciDB-py session when there can be hundreds of arrays like:
 ```
 {12} 'py1100961778328_00046',32128,32128,'py1100961778328_00046<No:int64,name:string,uaid:int64,aid:int64,schema:string,availability:bool,temporary:bool> [idx=0:*,1000000,0]',true,false
