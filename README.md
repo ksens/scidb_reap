@@ -1,10 +1,17 @@
-# scidbpy_reap
+# scidb_reap
 
 ## Shell command
 
-First test with:
+First set the regex:
 ```
-for name in $(iqlist_names | grep -e "py.*_.*" | awk '{print $2}' | cut -d "'" -f2) ; 
+regexToSearch="R_arr.*"
+# OR
+regexToSearch="py.*_.*"
+```
+
+Then search for arrays:
+```
+for name in $(iquery -aq "project(list(), name)" | grep -e "$regexToSearch" | awk '{print $2}' | cut -d "'" -f2) ; 
   do 
   echo $name; 
 done
@@ -12,7 +19,7 @@ done
 
 Then execute the removal by:
 ```
-for name in $(iqlist_names | grep -e "py.*_.*" | awk '{print $2}' | cut -d "'" -f2) ; 
+for name in $(iquery -aq "project(list(), name)" | grep -e "$regexToSearch" | awk '{print $2}' | cut -d "'" -f2) ; 
   do 
   echo $name; 
   iquery -aq "remove($name)" ; 
